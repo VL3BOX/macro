@@ -56,7 +56,7 @@
             <div class="u-tip-login el-alert el-alert--warning is-light">
                 <i class="el-alert__icon el-icon-warning"></i>
                 <span>
-                    使用宏收藏夹，请先
+                    {{ $t('使用宏收藏夹，请先') }}
                     <a :href="login_url">{{ $t('登录') }}</a>
                 </span>
             </div>

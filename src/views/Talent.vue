@@ -49,7 +49,7 @@
                     <el-input :placeholder="$t('粘贴编码亦可自动解析奇穴')" v-model="code" @change="parseSchema">
                         <span slot="prepend" @click="copy(code)" class="u-copy">
                             <i class="el-icon-document-copy"></i>
-                            点击复制
+                            {{ $t('点击复制') }}
                         </span>
                     </el-input>
                 </div>
@@ -58,7 +58,7 @@
                     <el-input :placeholder="$t('配装器编码')" v-model="pzcode">
                         <span slot="prepend" @click="copy(pzcode)" class="u-copy">
                             <i class="el-icon-document-copy"></i>
-                            点击复制
+                            {{ $t('点击复制') }}
                         </span>
                     </el-input>
                 </div>

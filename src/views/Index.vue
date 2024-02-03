@@ -54,7 +54,7 @@
                 <h2 class="u-title">{{ drawer_title }}</h2>
                 <macro :ctx="drawer_content" :name="drawer_title" :id="drawer_id" />
                 <a :href="drawer_link" class="u-skip el-button el-button--primary">
-                    <i class="el-icon-copy-document"></i> 查看详情
+                    <i class="el-icon-copy-document"></i> {{ $t('查看详情') }}
                 </a>
             </div>
         </el-drawer>

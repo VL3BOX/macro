@@ -11,7 +11,7 @@
                     {{ visibleTxt(item.visible) }}
                 </span>
                 <span class="u-draft" v-if="item.post_status == 'draft'">
-                    <i class="el-icon-edit-outline"></i> 草稿
+                    <i class="el-icon-edit-outline"></i> {{ $t('草稿') }}
                 </span>
             </template>
             <!-- 资料片 -->
@@ -30,7 +30,7 @@
                     },
                     caller: 'macro_index_click',
                 }"
-                >{{ item.post_title || "无标题" }}</a
+                >{{ item.post_title || $t('无标题') }}</a
             >
 
             <!-- 角标 -->

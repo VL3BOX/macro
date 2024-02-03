@@ -1,9 +1,9 @@
 <template>
     <app-layout slug="macroeditor" className="m-macroeditor">
         <h1 class="m-macroeditor-title">
-            智能宏编辑器
+            {{ $t('智能宏编辑器') }}
             <a href="/tool/265" target="_blank" class="u-help el-button el-button--success is-plain el-button--mini">
-                <i class="el-icon-s-management"></i> 宏语法参考手册
+                <i class="el-icon-s-management"></i> {{ $t('宏语法参考手册') }}
             </a>
         </h1>
         <div class="m-editor">
@@ -14,8 +14,8 @@
                         <el-form class="u-cmds" ref="form" :model="form" label-width="80px">
                             <el-form-item :label="$t('释放方式')">
                                 <el-radio-group v-model="castType">
-                                    <el-radio label="cast">释放(cast)</el-radio>
-                                    <el-radio label="fcast">强制施放(fcast)</el-radio>
+                                    <el-radio label="cast">{{ $t('释放') }}(cast)</el-radio>
+                                    <el-radio label="fcast">{{ $t('强制施放') }}(fcast)</el-radio>
                                 </el-radio-group>
                             </el-form-item>
                             <el-form-item :label="$t('技能名')">
@@ -52,7 +52,7 @@
                                         <span>{{ logicDialog }}</span>
                                         <span slot="footer" class="dialog-footer">
                                             <el-button type="primary" @click="logicDialogVisible = false"
-                                                >确 定</el-button
+                                                >{{ $t('确 定') }}</el-button
                                             >
                                         </span>
                                     </el-dialog>
@@ -67,8 +67,8 @@
                                     <template v-if="index >= 1">
                                         <el-form-item label>
                                             <el-radio-group v-model="condition.logic">
-                                                <el-radio label="&amp;">并且(and)</el-radio>
-                                                <el-radio label="|">或(or)</el-radio>
+                                                <el-radio label="&amp;">{{ $t('并且') }}(and)</el-radio>
+                                                <el-radio label="|">{{ $t('或') }}(or)</el-radio>
                                             </el-radio-group>
                                         </el-form-item>
                                     </template>
@@ -110,7 +110,7 @@
                                                     :label="$t('该宏最后一次释放的技能')"
                                                     value="last_skill"
                                                 ></el-option>
-                                                <el-option label="周围3尺以内敌人数量" value="nearby_enemy"></el-option>
+                                                <el-option :label="$t('周围3尺以内敌人数量')" value="nearby_enemy"></el-option>
                                                 <el-option :label="$t('技能调息完成')" value="skill_notin_cd"></el-option>
                                                 <el-option :label="$t('药性点数')" value="yaoxing"></el-option>
                                             </el-select>
@@ -186,12 +186,12 @@
                 <el-col :span="12">
                     <div class="m-col m-col-right">
                         <h2 class="u-subtitle"><img class svg-inline src="@/assets/img/macro/cube2.svg" />{{ $t('宏编辑区') }}</h2>
-                        <p class="u-tips">按下Tab键即可自动联想补全</p>
+                        <p class="u-tips">{{ $t('按下Tab键即可自动联想补全') }}</p>
                         <codemirror v-model="code" :options="cmOptions" @input="onCmCodeChange" ref="cmEditor" />
                         <div class="u-count">
                             <b :class="{ warning: code.length > 128 }">{{ code.length }}</b>
                             / 128
-                            <em>（还可写 {{ 128 - code.length }} 字）</em>
+                            <em>（{{ $t('还可写') }} {{ 128 - code.length }} {{ $t('字') }}）</em>
                         </div>
                     </div>
                 </el-col>

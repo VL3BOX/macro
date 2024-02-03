@@ -55,7 +55,7 @@
                             class="m-talent2-surplus"
                             :class="[total - totalCount > 0 ? '' : 'm-talent2-surplus-empty']"
                         >
-                            剩余点数 :
+                            {{ $t('剩余点数') }} :
                             <span>{{ surplus }}</span>
                         </div>
                         <div class="m-talent2-main">
@@ -174,7 +174,7 @@
                                                             >
                                                         </span>
                                                         <span class="m-talent2-number">
-                                                            第{{ Number(l_data[index][i]) + "/" + item.max }}重
+                                                            {{ $t('第') }}{{ Number(l_data[index][i]) + "/" + item.max }}{{ $t('重') }}
                                                         </span>
                                                     </b>
                                                     <!-- <b class="m-talent2-type">
@@ -319,7 +319,7 @@
                                                             >
                                                         </span>
                                                         <span class="m-talent2-number">
-                                                            第{{ Number(r_data[index][i]) + "/" + item.max }}重
+                                                            {{ $t('第') }}{{ Number(r_data[index][i]) + "/" + item.max }}{{ $t('重') }}
                                                         </span>
                                                     </b>
                                                     <!-- <b class="m-talent2-type">
@@ -341,7 +341,7 @@
                                                         "
                                                         class="m-talent2-desc-next"
                                                     >
-                                                        <span v-if="xf !== '通用'" class="m-next-text">下一重：</span>
+                                                        <span v-if="xf !== '通用'" class="m-next-text">{{ $t('下一重：') }}</span>
                                                         <span>
                                                             {{ item.desc[r_data[index][i]] }}
                                                         </span>
@@ -377,7 +377,7 @@
                     <el-input :placeholder="$t('粘贴编码亦可自动解析奇穴')" v-model="code" @change="parseSchema">
                         <span slot="prepend" @click="copy(code)" class="u-copy">
                             <i class="el-icon-document-copy"></i>
-                            点击复制
+                            {{ $t('点击复制') }}
                         </span>
                     </el-input>
                 </div>
@@ -386,7 +386,7 @@
                     <el-input :placeholder="$t('配装器编码')" v-model="pzcode">
                         <span slot="prepend" @click="copy(pzcode)" class="u-copy">
                             <i class="el-icon-document-copy"></i>
-                            点击复制
+                            {{ $t('点击复制') }}
                         </span>
                     </el-input>
                 </template>
@@ -395,7 +395,7 @@
                         type="primary"
                         :icon="currentSchema ? 'el-icon-check' : 'el-icon-document-add'"
                         @click="save"
-                        >{{ currentSchema ? "保存" : "保存为预设" }}</el-button
+                        >{{ $t(currentSchema ? "保存" : "保存为预设") }}</el-button
                     >
                     <el-button
                         v-if="isEditing"

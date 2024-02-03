@@ -10,7 +10,7 @@
             ></common-header>
             <!-- 提醒 -->
             <el-alert
-                title="自用宏将会被设置为仅私有，不论私有或公开游戏内均可以云端加载。"
+                :title="$t('自用宏将会被设置为仅私有，不论私有或公开游戏内均可以云端加载。')"
                 type="info"
                 show-icon
             ></el-alert>

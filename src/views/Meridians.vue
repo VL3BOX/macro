@@ -5,8 +5,8 @@
                 <h1 class="m-meridians-title">{{ $t('经脉模拟器') }}</h1>
                 <div class="m-meridians-desc">
                     <span class="u-meta">
-                        <em>❤️ 使用小贴士</em>
-                        <b>左键点通节点、右键回退</b>
+                        <em>❤️ {{ $t('使用小贴士') }}</em>
+                        <b>{{ $t('左键点通节点、右键回退') }}</b>
                     </span>
                     <a class="u-link" href="https://jq.qq.com/?_wv=1027&k=s6eiK59S" target="_blank">
                         <span>【怀旧服交流群】</span>
@@ -160,7 +160,7 @@
                     </div>
                     <div class="dantian" :style="dantian > 100000 ? 'color: red' : ''">
                         {{ dantian }}/100000
-                        <span style="color: red">{{ dantian > 100000 ? "丹田已满" : "" }}</span>
+                        <span style="color: red">{{ dantian > 100000 ? $t('丹田已满') : "" }}</span>
                     </div>
                 </div>
                 <div class="m-meridians-preview">
@@ -205,20 +205,20 @@
             </div>
             <footer class="m-meridians-footer">
                 <el-checkbox class="u-extend" v-model="isEfficient">
-                    下极俞
-                    <span>(消耗修为减少10%)</span>
+                    {{ $t('下极俞') }}
+                    <span>({{ $t('消耗修为减少') }}10%)</span>
                 </el-checkbox>
                 <el-button type="primary" @click="readBox" class="u-save" style="right: 110px" size="mini">
-                    <i class="el-icon-download"></i>导入方案
+                    <i class="el-icon-download"></i>{{ $t('导入方案') }}
                 </el-button>
                 <el-button type="warning" @click="generate" class="u-save" size="mini" v-if="isLogin">
-                    <img svg-inline src="@/assets/img/meridians/save.svg" />保存方案
+                    <img svg-inline src="@/assets/img/meridians/save.svg" />{{ $t('保存方案') }}
                 </el-button>
             </footer>
             <div class="diglogShow" @click="myMeridians" v-if="isLogin">{{ $t('我的经脉') }}</div>
             <el-dialog :title="$t('我的方案')" :visible.sync="dialogVisible" width="40%" v-if="isLogin">
                 <el-table :data="list" style="width: 100%">
-                    <el-table-column prop="id" width="70" align="center" label="方案ID">
+                    <el-table-column prop="id" width="70" align="center" :label="$t('方案ID')">
                         <template slot-scope="scope">
                             <b style="color: #4caf50">{{ scope.row.id }}</b>
                         </template>

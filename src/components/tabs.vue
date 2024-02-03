@@ -27,7 +27,7 @@
                 <b>{{ $t('亲友的宏') }}</b>
             </span>
         </el-tab-pane>
-        <el-tab-pane :label="$t('排行榜')"'排行榜')" name="rank">
+        <el-tab-pane :label="$t('排行榜')" name="rank">
             <span slot="label">
                 <i class="el-icon-data-analysis"></i>
                 <b>{{ $t('排行榜') }}</b>

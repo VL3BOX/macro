@@ -10,7 +10,7 @@
                 :canFilter="false"
             ></common-header>
             <!-- 提醒 -->
-            <el-alert title="此处仅显示亲友设置为“仅亲友可见”的宏。" type="info" show-icon></el-alert>
+            <el-alert :title="$t('此处仅显示亲友设置为“仅亲友可见”的宏。')" type="info" show-icon></el-alert>
             <!-- 列表 -->
             <div class="m-archive-list" v-if="data && data.length">
                 <ul class="u-list">
@@ -55,7 +55,7 @@
             <div class="u-tip-login el-alert el-alert--warning is-light">
                 <i class="el-alert__icon el-icon-warning"></i>
                 <span>
-                    使用亲友限定分享仓库，请先
+                    {{ $t('使用亲友限定分享仓库，请先') }}
                     <a :href="login_url">{{ $t('登录') }}</a>
                 </span>
             </div>
@@ -66,7 +66,7 @@
                 <h2 class="u-title">{{ drawer_title }}</h2>
                 <macro :ctx="drawer_content" :name="drawer_title" :id="drawer_id" />
                 <a :href="drawer_link" class="u-skip el-button el-button--primary">
-                    <i class="el-icon-copy-document"></i> 查看详情
+                    <i class="el-icon-copy-document"></i> {{ $('查看详情') }}
                 </a>
             </div>
         </el-drawer>

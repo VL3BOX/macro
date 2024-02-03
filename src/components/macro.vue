@@ -36,9 +36,9 @@
                     v-if="isSuperAdmin || isAuthor"
                     :href="'https://pull.j3cx.com/api/macro/query?name=' + testname + '&_no_cache'"
                     target="_blank"
-                    title="默认存在1分钟缓存，如需要即时生效请点击此按钮"
+                    :title="$t('默认存在1分钟缓存，如需要即时生效请点击此按钮')"
                 >
-                    <i class="el-icon-video-play"></i> 云端同步刷新
+                    <i class="el-icon-video-play"></i> {{ $t('云端同步刷新') }}
                 </a>
                 <!-- <el-checkbox
                     v-if="isLogin"
@@ -53,14 +53,14 @@
                 > -->
             </div>
             <div class="u-count">
-                字数：
+                {{ $t('字数：') }}
                 <b>{{ count }}</b>
             </div>
         </template>
         <!-- 宏是空的的时候会直接显示上一个不够合理 -->
         <template v-else>
             <el-alert type="warning" show-icon :closable="false">
-                <div class="u-empty-text" slot="title">Σ(ﾟдﾟlll)&nbsp;&nbsp;&nbsp;糟糕，这个宏是空的！</div>
+                <div class="u-empty-text" slot="title">Σ(ﾟдﾟlll)&nbsp;&nbsp;&nbsp;{{ $t('糟糕，这个宏是空的！') }}</div>
             </el-alert>
         </template>
     </div>

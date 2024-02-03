@@ -32,7 +32,7 @@
 						</div>
 						<!-- 奇穴 镇派 -->
 						<template v-if="item.talent">
-							<el-divider content-position="left">{{ client === "origin" ? "镇派" : "奇穴" }}</el-divider>
+							<el-divider content-position="left">{{ $t(client === "origin" ? "镇派" : "奇穴") }}</el-divider>
 							<div class="m-single-talent-container">
 								<template v-if="client === 'origin'">
 									<render-talent :talent-code="item.talent"></render-talent>
@@ -40,7 +40,7 @@
 								<div v-else class="u-talent talent-box" :id="`talent-box-${i}`"></div>
 							</div>
 							<div class="u-panel u-talent-panel" v-if="item.talent">
-								<el-button class="u-talent-panel-copycode" icon="el-icon-s-tools" plain size="mini" @click="copy(item.talent)">复制{{ client === "origin" ? "镇派" : "奇穴" }}编码</el-button>
+								<el-button class="u-talent-panel-copycode" icon="el-icon-s-tools" plain size="mini" @click="copy(item.talent)">{{ $t('复制') }}{{ $t(client === "origin" ? "镇派" : "奇穴") }}{{ $t('编码') }}</el-button>
 								<el-button v-if="client !== 'origin'" class="u-talent-panel-copytxt" icon="el-icon-document-copy" plain size="mini" @click="copy(getTalentTXT(i))">{{ $t('复制奇穴文字') }}</el-button>
 								<el-button v-if="client !== 'origin'" class="u-talent-panel-copysq" icon="el-icon-scissors" plain size="mini" @click="copy(getTalentSQ(item.talent))">{{ $t('复制奇穴序列') }}</el-button>
 							</div>
