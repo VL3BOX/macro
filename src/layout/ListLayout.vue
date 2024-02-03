@@ -2,7 +2,7 @@
     <div>
         <Header></Header>
         <Breadcrumb
-            name="云端宏"
+            :name="$t('云端宏')"
             slug="macro"
             root="/macro"
             :publishEnable="true"

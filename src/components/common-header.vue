@@ -2,7 +2,7 @@
     <div class="c-macro__header">
         <div class="m-archive-search" slot="search-before">
             <a :href="publish_link" class="u-publish el-button el-button--primary">+ 发布作品</a>
-            <el-input placeholder="请输入搜索内容" v-model.trim.lazy="search" clearable @clear="onSearch" @keydown.native.enter="onSearch">
+            <el-input :placeholder="$t('请输入搜索内容')" v-model.trim.lazy="search" clearable @clear="onSearch" @keydown.native.enter="onSearch">
                 <span slot="prepend"><i class="el-icon-search"></i> <span class="u-search">关键词</span></span>
                 <el-button slot="append" icon="el-icon-position" class="u-btn" @click="onSearch"></el-button>
             </el-input>
@@ -16,7 +16,7 @@
                 <!-- 角标过滤 -->
                 <markBy @filter="filterMeta"></markBy>
                 <!-- 语言过滤 -->
-                <menuBy @filter="filterMeta" :data="langs" type="lang" placeholder="语言"></menuBy>
+                <menuBy @filter="filterMeta" :data="langs" type="lang" :placeholder="$t('语言')"></menuBy>
                 <!-- 资料片过滤 -->
                 <zlpBy @filter="filterMeta" type="zlp" :client="client"></zlpBy>
             </div>

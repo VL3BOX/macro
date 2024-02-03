@@ -12,21 +12,21 @@
                     <div class="m-col m-col-left">
                         <h2 class="u-subtitle"><img class svg-inline src="@/assets/img/macro/cube1.svg" />快捷插入</h2>
                         <el-form class="u-cmds" ref="form" :model="form" label-width="80px">
-                            <el-form-item label="释放方式">
+                            <el-form-item :label="$t('释放方式')">
                                 <el-radio-group v-model="castType">
                                     <el-radio label="cast">释放(cast)</el-radio>
                                     <el-radio label="fcast">强制施放(fcast)</el-radio>
                                 </el-radio-group>
                             </el-form-item>
-                            <el-form-item label="技能名">
+                            <el-form-item :label="$t('技能名')">
                                 <el-input v-model="skill"></el-input>
                             </el-form-item>
-                            <el-form-item label="条件释放">
+                            <el-form-item :label="$t('条件释放')">
                                 <el-switch v-model="isConditional"></el-switch>
                                 <template v-if="isConditional && conditions.length > 2">
                                     <span class="btn-help">
                                         <!-- <el-tooltip
-                                        content="点击查看实际逻辑关系"
+                                        :content="$t('点击查看实际逻辑关系')"
                                         placement="right"
                                         effect="light"
                                         :manual="true"
@@ -45,7 +45,7 @@
                                         type="warning"
                                     ></el-alert>
                                     <el-dialog
-                                        title="实际逻辑"
+                                        :title="$t('实际逻辑')"
                                         :visible.sync="logicDialogVisible"
                                         :width="Math.min(640, this.windowInnerWidth * 0.9) + 'px'"
                                     >
@@ -76,50 +76,50 @@
                                         <el-col :span="16">
                                             <el-select
                                                 v-model="condition.name"
-                                                placeholder="判断项目"
+                                                :placeholder="$t('判断项目')"
                                                 @change="onConditionChange(index)"
                                             >
-                                                <el-option label="自身有增减益效果" value="buff"></el-option>
-                                                <el-option label="自身有增减益效果层数" value="buff_level"></el-option>
-                                                <el-option label="目标有增减益效果" value="tbuff"></el-option>
-                                                <el-option label="目标有增减益效果层数" value="tbuff_level"></el-option>
-                                                <el-option label="自身增减益效果持续时间" value="bufftime"></el-option>
-                                                <el-option label="目标增减益效果持续时间" value="tbufftime"></el-option>
-                                                <el-option label="自身不存在某增减益效果" value="nobuff"></el-option>
-                                                <el-option label="目标不存在某增减益效果" value="tnobuff"></el-option>
+                                                <el-option :label="$t('自身有增减益效果')" value="buff"></el-option>
+                                                <el-option :label="$t('自身有增减益效果层数')" value="buff_level"></el-option>
+                                                <el-option :label="$t('目标有增减益效果')" value="tbuff"></el-option>
+                                                <el-option :label="$t('目标有增减益效果层数')" value="tbuff_level"></el-option>
+                                                <el-option :label="$t('自身增减益效果持续时间')" value="bufftime"></el-option>
+                                                <el-option :label="$t('目标增减益效果持续时间')" value="tbufftime"></el-option>
+                                                <el-option :label="$t('自身不存在某增减益效果')" value="nobuff"></el-option>
+                                                <el-option :label="$t('目标不存在某增减益效果')" value="tnobuff"></el-option>
                                                 <el-option label="目标NPC强度等级" value="npclevel"></el-option>
-                                                <el-option label="生命值和最大血量的比值" value="life"></el-option>
-                                                <el-option label="内力值和最大内力值的比值" value="mana"></el-option>
-                                                <el-option label="剑气/尘身刀气/战意/怒气值" value="rage"></el-option>
+                                                <el-option :label="$t('生命值和最大血量的比值')" value="life"></el-option>
+                                                <el-option :label="$t('内力值和最大内力值的比值')" value="mana"></el-option>
+                                                <el-option :label="$t('剑气/尘身刀气/战意/怒气值')" value="rage"></el-option>
                                                 <el-option
-                                                    label="纯阳气点/少林禅那/七秀剑舞值"
+                                                    :label="$t('纯阳气点/少林禅那/七秀剑舞值')"
                                                     value="qidian"
                                                 ></el-option>
-                                                <el-option label="神机/竹雾刀气/格挡值" value="energy"></el-option>
-                                                <el-option label="日灵/金屏刀气值" value="sun"></el-option>
-                                                <el-option label="月魂值" value="moon"></el-option>
-                                                <el-option label="满日状态" value="sun_power"></el-option>
-                                                <el-option label="满月状态" value="moon_power"></el-option>
+                                                <el-option :label="$t('神机/竹雾刀气/格挡值')" value="energy"></el-option>
+                                                <el-option :label="$t('日灵/金屏刀气值')" value="sun"></el-option>
+                                                <el-option :label="$t('月魂值')" value="moon"></el-option>
+                                                <el-option :label="$t('满日状态')" value="sun_power"></el-option>
+                                                <el-option :label="$t('满月状态')" value="moon_power"></el-option>
                                                 <el-option
-                                                    label="充能技能的当前充能层数"
+                                                    :label="$t('充能技能的当前充能层数')"
                                                     value="skill_energy"
                                                 ></el-option>
                                                 <el-option label="存在某技能/奇穴ID" value="skill"></el-option>
                                                 <el-option label="不存在某技能/奇穴ID" value="noskill"></el-option>
                                                 <el-option
-                                                    label="该宏最后一次释放的技能"
+                                                    :label="$t('该宏最后一次释放的技能')"
                                                     value="last_skill"
                                                 ></el-option>
                                                 <el-option label="周围3尺以内敌人数量" value="nearby_enemy"></el-option>
-                                                <el-option label="技能调息完成" value="skill_notin_cd"></el-option>
-                                                <el-option label="药性点数" value="yaoxing"></el-option>
+                                                <el-option :label="$t('技能调息完成')" value="skill_notin_cd"></el-option>
+                                                <el-option :label="$t('药性点数')" value="yaoxing"></el-option>
                                             </el-select>
                                             <el-row :gutter="2">
                                                 <el-col
                                                     :span="10"
                                                     v-if="needsConditionParams.subname.includes(condition.name)"
                                                 >
-                                                    <el-input v-model="condition.subname" placeholder="名称"></el-input>
+                                                    <el-input v-model="condition.subname" :placeholder="$t('名称')"></el-input>
                                                 </el-col>
                                                 <el-col
                                                     :span="7"
@@ -149,7 +149,7 @@
                                                     :span="7"
                                                     v-if="needsConditionParams.value.includes(condition.name)"
                                                 >
-                                                    <el-input v-model="condition.value" placeholder="值"></el-input>
+                                                    <el-input v-model="condition.value" :placeholder="$t('值')"></el-input>
                                                 </el-col>
                                             </el-row>
                                         </el-col>

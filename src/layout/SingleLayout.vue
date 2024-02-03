@@ -1,7 +1,7 @@
 <template>
     <div>
         <Header></Header>
-        <Breadcrumb name="云端宏" slug="macro" root="/macro" :publishEnable="true" :adminEnable="true" :feedbackEnable="true" :crumbEnable="true">
+        <Breadcrumb :name="$t('云端宏')" slug="macro" root="/macro" :publishEnable="true" :adminEnable="true" :feedbackEnable="true" :crumbEnable="true">
             <template #op-prepend>
                 <AdminDirectMessage v-if="post && post.ID" :user-id="user_id" :sourceId="String(post.ID)" :sourceType="post.post_type"></AdminDirectMessage>
             </template>

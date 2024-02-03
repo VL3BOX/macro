@@ -216,15 +216,15 @@
                 </el-button>
             </footer>
             <div class="diglogShow" @click="myMeridians" v-if="isLogin">我的经脉</div>
-            <el-dialog title="我的方案" :visible.sync="dialogVisible" width="40%" v-if="isLogin">
+            <el-dialog :title="$t('我的方案')" :visible.sync="dialogVisible" width="40%" v-if="isLogin">
                 <el-table :data="list" style="width: 100%">
                     <el-table-column prop="id" width="70" align="center" label="方案ID">
                         <template slot-scope="scope">
                             <b style="color: #4caf50">{{ scope.row.id }}</b>
                         </template>
                     </el-table-column>
-                    <el-table-column prop="name" label="方案名称"></el-table-column>
-                    <el-table-column label="操作" width="200">
+                    <el-table-column prop="name" :label="$t('方案名称')"></el-table-column>
+                    <el-table-column :label="$t('操作')" width="200">
                         <template slot-scope="scope">
                             <el-button type="primary" size="mini" @click="restore(scope.row.id)">加载</el-button>
                             <el-button type="danger" size="mini" @click="remove(scope.row.id)">删除</el-button>

@@ -23,7 +23,7 @@
         </div>
 
         <!-- 空 -->
-        <el-alert v-else class="m-archive-null" title="没有找到相关条目" type="info" center show-icon></el-alert>
+        <el-alert v-else class="m-archive-null" :title="$t('没有找到相关条目')" type="info" center show-icon></el-alert>
 
         <!-- 下一页 -->
         <el-button
@@ -49,7 +49,7 @@
         ></el-pagination>
 
         <!-- 快捷查看宏 -->
-        <el-drawer class="m-macro-drawer" title="云端宏" :visible.sync="drawer" :append-to-body="true">
+        <el-drawer class="m-macro-drawer" :title="$t('云端宏')" :visible.sync="drawer" :append-to-body="true">
             <div class="u-box">
                 <h2 class="u-title">{{ drawer_title }}</h2>
                 <macro :ctx="drawer_content" :name="drawer_title" :id="drawer_id" />

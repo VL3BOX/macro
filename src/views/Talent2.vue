@@ -8,7 +8,7 @@
                         <span class="u-label">选择版本</span>
                         <el-select
                             v-model="version"
-                            placeholder="请选择游戏版本"
+                            :placeholder="$t('请选择游戏版本')"
                             @change="reload"
                             popper-class="m-talent__pop"
                         >
@@ -374,7 +374,7 @@
                 </div>
                 <h2 class="m-talent-subtitle">镇派编码</h2>
                 <div class="m-talent-code">
-                    <el-input placeholder="粘贴编码亦可自动解析奇穴" v-model="code" @change="parseSchema">
+                    <el-input :placeholder="$t('粘贴编码亦可自动解析奇穴')" v-model="code" @change="parseSchema">
                         <span slot="prepend" @click="copy(code)" class="u-copy">
                             <i class="el-icon-document-copy"></i>
                             点击复制
@@ -383,7 +383,7 @@
                 </div>
                 <template v-if="isAdmin">
                     <h2 class="m-talent-subtitle">配装编码</h2>
-                    <el-input placeholder="配装器编码" v-model="pzcode">
+                    <el-input :placeholder="$t('配装器编码')" v-model="pzcode">
                         <span slot="prepend" @click="copy(pzcode)" class="u-copy">
                             <i class="el-icon-document-copy"></i>
                             点击复制
