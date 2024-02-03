@@ -33,7 +33,7 @@
             @click="appendPage"
             :loading="loading"
             icon="el-icon-arrow-down"
-            >加载更多</el-button
+            >{{ $t('加载更多') }}</el-button
         >
 
         <!-- 分页 -->

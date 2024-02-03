@@ -2,10 +2,10 @@
     <app-layout slug="talent">
         <div class="m-talent">
             <div class="m-talent-header">
-                <h1 class="m-talent-title">奇穴模拟器</h1>
+                <h1 class="m-talent-title">{{ $t('奇穴模拟器') }}</h1>
                 <div class="m-talent-panel">
                     <div class="m-talent-version">
-                        <span class="u-label">选择版本</span>
+                        <span class="u-label">{{ $t('选择版本') }}</span>
                         <el-select
                             v-model="version"
                             :placeholder="$t('请选择游戏版本')"
@@ -26,25 +26,25 @@
                         </el-select>
                     </div>
                     <div class="u-toolbar" v-if="isLogin">
-                        <!-- <el-button plain @click="showList = false" icon="el-icon-refresh-left" size="small" v-if="showList">返回</el-button> -->
-                        <!-- <el-button type="primary" @click="showList = true" icon="el-icon-setting" size="small" v-else>我的预设</el-button> -->
+                        <!-- <el-button plain @click="showList = false" icon="el-icon-refresh-left" size="small" v-if="showList">{{ $t('返回') }}</el-button> -->
+                        <!-- <el-button type="primary" @click="showList = true" icon="el-icon-setting" size="small" v-else>{{ $t('我的预设') }}</el-button> -->
                         <el-button type="primary" @click="drawer = true" icon="el-icon-setting" size="small"
-                            >我的预设</el-button
+                            >{{ $t('我的预设') }}</el-button
                         >
                     </div>
                 </div>
             </div>
             <div class="m-talent-wrapper">
-                <h2 class="m-talent-subtitle">选择心法</h2>
+                <h2 class="m-talent-subtitle">{{ $t('选择心法') }}</h2>
                 <div class="m-talent-xf">
                     <el-radio v-for="(item, i) in xfMaps" v-model="xf" :label="item.name" :key="i" @change="reload">
                         <img class="u-pic" :src="xficon(item.id)" :alt="item.name" />
                         <span class="u-txt">{{ item.name }}</span>
                     </el-radio>
                 </div>
-                <h2 class="m-talent-subtitle">配置奇穴</h2>
+                <h2 class="m-talent-subtitle">{{ $t('配置奇穴') }}</h2>
                 <div class="qx-container"></div>
-                <h2 class="m-talent-subtitle">奇穴编码</h2>
+                <h2 class="m-talent-subtitle">{{ $t('奇穴编码') }}</h2>
                 <div class="m-talent-code">
                     <el-input :placeholder="$t('粘贴编码亦可自动解析奇穴')" v-model="code" @change="parseSchema">
                         <span slot="prepend" @click="copy(code)" class="u-copy">
@@ -54,7 +54,7 @@
                     </el-input>
                 </div>
                 <div class="m-talent-code" v-if="isEditor">
-                    <h2 class="m-talent-subtitle">配装编码</h2>
+                    <h2 class="m-talent-subtitle">{{ $t('配装编码') }}</h2>
                     <el-input :placeholder="$t('配装器编码')" v-model="pzcode">
                         <span slot="prepend" @click="copy(pzcode)" class="u-copy">
                             <i class="el-icon-document-copy"></i>
@@ -76,7 +76,7 @@
                         class="u-btn"
                         @click="saveAs"
                         plain
-                        >另存为</el-button
+                        >{{ $t('另存为') }}</el-button
                     >
                 </div>
             </div>

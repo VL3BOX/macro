@@ -35,7 +35,7 @@
                 @click="appendPage"
                 :loading="loading"
                 icon="el-icon-arrow-down"
-                >加载更多</el-button
+                >{{ $t('加载更多') }}</el-button
             >
 
             <!-- 分页 -->
@@ -56,7 +56,7 @@
                 <i class="el-alert__icon el-icon-warning"></i>
                 <span>
                     使用亲友限定分享仓库，请先
-                    <a :href="login_url">登录</a>
+                    <a :href="login_url">{{ $t('登录') }}</a>
                 </span>
             </div>
         </div>

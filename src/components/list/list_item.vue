@@ -17,7 +17,7 @@
             <!-- 资料片 -->
             <span class="u-label u-zlp" v-if="item.zlp">{{ item.zlp }}</span>
             <!-- 繁体标识 -->
-            <span class="u-label u-lang" v-if="item.lang == 'tr'">繁體</span>
+            <span class="u-label u-lang" v-if="item.lang == 'tr'">{{ $t('繁體') }}</span>
             <!-- 标题文字 -->
             <a
                 class="u-title"

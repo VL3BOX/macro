@@ -9,7 +9,7 @@
                     plain
                     size="mini"
                     @click="copy(copytext)"
-                    >复制宏内容</el-button
+                    >{{ $t('复制宏内容') }}</el-button
                 >
                 <el-button
                     icon="el-icon-refresh"
@@ -19,8 +19,8 @@
                     v-if="isCN"
                     class="u-macro-panel-translate"
                 >
-                    <span v-if="status">轉換為繁體</span>
-                    <span v-else>转换为简体</span>
+                    <span v-if="status">{{ $t('轉換為繁體') }}</span>
+                    <span v-else>{{ $t('转换为简体') }}</span>
                 </el-button>
                 <el-button
                     class="u-macro-panel-copyname"
@@ -29,7 +29,7 @@
                     type="primary"
                     size="mini"
                     @click="copy(copyname, 'cloud')"
-                    >复制云端宏</el-button
+                    >{{ $t('复制云端宏') }}</el-button
                 >
                 <a
                     class="u-macro-panel-test el-button el-button--mini is-plain"
@@ -49,7 +49,7 @@
                     :true-label="1"
                     :false-label="0"
                     @change="onAuthThxChange"
-                    >自动感谢</el-checkbox
+                    >{{ $t('自动感谢') }}</el-checkbox
                 > -->
             </div>
             <div class="u-count">

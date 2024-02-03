@@ -3,14 +3,14 @@
 		<singlebox :post="post" :stat="stat" v-loading="loading" @extendUpdate="updateExtend">
 			<template slot="single-header">
 				<div class="u-meta u-sub-block">
-					<em class="u-label">心法</em>
+					<em class="u-label">{{ $t('心法') }}</em>
 					<span class="u-value">
 						<img class="u-icon-xf" :src="xficon(xficon_id)" :alt="xf" />
 						{{ xf }}
 					</span>
 				</div>
 				<div class="u-meta u-sub-block">
-					<em class="u-label">资料片</em>
+					<em class="u-label">{{ $t('资料片') }}</em>
 					<span class="u-value">{{ zlp }}</span>
 				</div>
 			</template>
@@ -25,7 +25,7 @@
 							<b>{{ item.name }}</b>
 						</span>
 						<!-- 宏 -->
-						<el-divider content-position="left" v-if="item.macro">宏</el-divider>
+						<el-divider content-position="left" v-if="item.macro">{{ $t('宏') }}</el-divider>
 						<div class="u-usage" v-if="item.desc">{{ item.desc }}</div>
 						<div class="u-macro macro-box" :class="{ withUsage: item.desc }" v-if="item.macro">
 							<macro :ctx="item.macro" :lang="lang" :name="post.author + '#' + item.name" :id="id" />
@@ -41,18 +41,18 @@
 							</div>
 							<div class="u-panel u-talent-panel" v-if="item.talent">
 								<el-button class="u-talent-panel-copycode" icon="el-icon-s-tools" plain size="mini" @click="copy(item.talent)">复制{{ client === "origin" ? "镇派" : "奇穴" }}编码</el-button>
-								<el-button v-if="client !== 'origin'" class="u-talent-panel-copytxt" icon="el-icon-document-copy" plain size="mini" @click="copy(getTalentTXT(i))">复制奇穴文字</el-button>
-								<el-button v-if="client !== 'origin'" class="u-talent-panel-copysq" icon="el-icon-scissors" plain size="mini" @click="copy(getTalentSQ(item.talent))">复制奇穴序列</el-button>
+								<el-button v-if="client !== 'origin'" class="u-talent-panel-copytxt" icon="el-icon-document-copy" plain size="mini" @click="copy(getTalentTXT(i))">{{ $t('复制奇穴文字') }}</el-button>
+								<el-button v-if="client !== 'origin'" class="u-talent-panel-copysq" icon="el-icon-scissors" plain size="mini" @click="copy(getTalentSQ(item.talent))">{{ $t('复制奇穴序列') }}</el-button>
 							</div>
 						</template>
 						<!-- 急速 -->
-						<el-divider content-position="left" v-if="item.speed">急速</el-divider>
+						<el-divider content-position="left" v-if="item.speed">{{ $t('急速') }}</el-divider>
 						<div class="u-speed" v-if="item.speed">{{ item.speed }}</div>
 					</el-tab-pane>
 				</el-tabs>
 				<!-- 配装 -->
 				<template v-if="hasPz">
-					<el-divider content-position="left">配装</el-divider>
+					<el-divider content-position="left">{{ $t('配装') }}</el-divider>
 					<div class="u-equipbox">
 						<!-- <Equip :id="item.equip" v-if="item.equip_type == 'jx3box'" /> -->
 						<pz class="m-macro-pz" :raw="pz"></pz>

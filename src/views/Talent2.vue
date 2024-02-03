@@ -2,10 +2,10 @@
     <app-layout slug="talent2">
         <div class="m-talent m-talent2">
             <div class="m-talent-header">
-                <h1 class="m-talent-title">镇派模拟器</h1>
+                <h1 class="m-talent-title">{{ $t('镇派模拟器') }}</h1>
                 <div class="m-talent-panel">
                     <div class="m-talent-version">
-                        <span class="u-label">选择版本</span>
+                        <span class="u-label">{{ $t('选择版本') }}</span>
                         <el-select
                             v-model="version"
                             :placeholder="$t('请选择游戏版本')"
@@ -27,13 +27,13 @@
                     </div>
                     <div class="u-toolbar" v-if="isLogin">
                         <el-button type="primary" @click="drawer = true" icon="el-icon-setting" size="small"
-                            >我的预设</el-button
+                            >{{ $t('我的预设') }}</el-button
                         >
                     </div>
                 </div>
             </div>
             <div class="m-talent-wrapper">
-                <h2 class="m-talent-subtitle">选择心法</h2>
+                <h2 class="m-talent-subtitle">{{ $t('选择心法') }}</h2>
                 <div class="m-talent-xf">
                     <el-radio
                         v-for="(item, i) in xfMaps"
@@ -47,9 +47,9 @@
                         <span class="u-txt">{{ item.name }}</span>
                     </el-radio>
                 </div>
-                <h2 class="m-talent-subtitle">配置镇派</h2>
+                <h2 class="m-talent-subtitle">{{ $t('配置镇派') }}</h2>
                 <div class="m-talent2-box">
-                    <div class="m-talent2-main-title">镇派经脉模拟器</div>
+                    <div class="m-talent2-main-title">{{ $t('镇派经脉模拟器') }}</div>
                     <template v-if="xf">
                         <div
                             class="m-talent2-surplus"
@@ -203,10 +203,10 @@
                                                         </span>
                                                     </span>
                                                     <span v-if="Number(l_data[index][i]) === item.max" class="m-max"
-                                                        >该招式已练至最高境界</span
+                                                        >{{ $t('该招式已练至最高境界') }}</span
                                                     >
                                                     <span class="m-talent-retrogress" v-if="Number(l_data[index][i])"
-                                                        >右键点击遗忘</span
+                                                        >{{ $t('右键点击遗忘') }}</span
                                                     >
                                                 </span>
                                             </div>
@@ -347,10 +347,10 @@
                                                         </span>
                                                     </span>
                                                     <span v-if="Number(r_data[index][i]) === item.max" class="m-max"
-                                                        >该招式已练至最高境界</span
+                                                        >{{ $t('该招式已练至最高境界') }}</span
                                                     >
                                                     <span class="m-talent-retrogress" v-if="Number(r_data[index][i])"
-                                                        >右键点击遗忘</span
+                                                        >{{ $t('右键点击遗忘') }}</span
                                                     >
                                                 </span>
                                             </div>
@@ -372,7 +372,7 @@
                         </div>
                     </template>
                 </div>
-                <h2 class="m-talent-subtitle">镇派编码</h2>
+                <h2 class="m-talent-subtitle">{{ $t('镇派编码') }}</h2>
                 <div class="m-talent-code">
                     <el-input :placeholder="$t('粘贴编码亦可自动解析奇穴')" v-model="code" @change="parseSchema">
                         <span slot="prepend" @click="copy(code)" class="u-copy">
@@ -382,7 +382,7 @@
                     </el-input>
                 </div>
                 <template v-if="isAdmin">
-                    <h2 class="m-talent-subtitle">配装编码</h2>
+                    <h2 class="m-talent-subtitle">{{ $t('配装编码') }}</h2>
                     <el-input :placeholder="$t('配装器编码')" v-model="pzcode">
                         <span slot="prepend" @click="copy(pzcode)" class="u-copy">
                             <i class="el-icon-document-copy"></i>
@@ -404,7 +404,7 @@
                         class="u-btn"
                         @click="saveAs"
                         plain
-                        >另存为</el-button
+                        >{{ $t('另存为') }}</el-button
                     >
                 </div>
             </div>

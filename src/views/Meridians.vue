@@ -2,7 +2,7 @@
     <app-layout slug="meridians">
         <div class="m-meridians">
             <header class="m-meridians-header">
-                <h1 class="m-meridians-title">经脉模拟器</h1>
+                <h1 class="m-meridians-title">{{ $t('经脉模拟器') }}</h1>
                 <div class="m-meridians-desc">
                     <span class="u-meta">
                         <em>❤️ 使用小贴士</em>
@@ -195,12 +195,12 @@
                         </div>
                     </div>
                     <div class="preview_desc">
-                        <p class="jichu">基础</p>
-                        <p class="fuzhu">辅助</p>
-                        <p class="waigong">外功</p>
-                        <p class="neigong">内功</p>
+                        <p class="jichu">{{ $t('基础') }}</p>
+                        <p class="fuzhu">{{ $t('辅助') }}</p>
+                        <p class="waigong">{{ $t('外功') }}</p>
+                        <p class="neigong">{{ $t('内功') }}</p>
                     </div>
-                    <div class="reset" @click="reset">重置经脉点数</div>
+                    <div class="reset" @click="reset">{{ $t('重置经脉点数') }}</div>
                 </div>
             </div>
             <footer class="m-meridians-footer">
@@ -215,7 +215,7 @@
                     <img svg-inline src="@/assets/img/meridians/save.svg" />保存方案
                 </el-button>
             </footer>
-            <div class="diglogShow" @click="myMeridians" v-if="isLogin">我的经脉</div>
+            <div class="diglogShow" @click="myMeridians" v-if="isLogin">{{ $t('我的经脉') }}</div>
             <el-dialog :title="$t('我的方案')" :visible.sync="dialogVisible" width="40%" v-if="isLogin">
                 <el-table :data="list" style="width: 100%">
                     <el-table-column prop="id" width="70" align="center" label="方案ID">
@@ -226,8 +226,8 @@
                     <el-table-column prop="name" :label="$t('方案名称')"></el-table-column>
                     <el-table-column :label="$t('操作')" width="200">
                         <template slot-scope="scope">
-                            <el-button type="primary" size="mini" @click="restore(scope.row.id)">加载</el-button>
-                            <el-button type="danger" size="mini" @click="remove(scope.row.id)">删除</el-button>
+                            <el-button type="primary" size="mini" @click="restore(scope.row.id)">{{ $t('加载') }}</el-button>
+                            <el-button type="danger" size="mini" @click="remove(scope.row.id)">{{ $t('删除') }}</el-button>
                         </template>
                     </el-table-column>
                 </el-table>

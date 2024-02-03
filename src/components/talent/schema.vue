@@ -2,7 +2,7 @@
     <div>
         <el-input :placeholder="$t('点击自动复制')" v-model="code" @click="copy(code)">
             <template slot="prepend">{{ config.desc + "·" + config.name }}</template>
-            <template slot="append">点击复制</template>
+            <template slot="append">{{ $t('点击复制') }}</template>
         </el-input>
     </div>
 </template>

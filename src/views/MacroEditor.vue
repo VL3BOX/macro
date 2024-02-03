@@ -10,7 +10,7 @@
             <el-row>
                 <el-col :span="12">
                     <div class="m-col m-col-left">
-                        <h2 class="u-subtitle"><img class svg-inline src="@/assets/img/macro/cube1.svg" />快捷插入</h2>
+                        <h2 class="u-subtitle"><img class svg-inline src="@/assets/img/macro/cube1.svg" />{{ $t('快捷插入') }}</h2>
                         <el-form class="u-cmds" ref="form" :model="form" label-width="80px">
                             <el-form-item :label="$t('释放方式')">
                                 <el-radio-group v-model="castType">
@@ -37,7 +37,7 @@
                                         </el-link>
                       </el-tooltip>-->
                                         <el-button plain icon="el-icon-info" @click="showRealLogic"
-                                            >点击查看实际逻辑关系</el-button
+                                            >{{ $t('点击查看实际逻辑关系') }}</el-button
                                         >
                                     </span>
                                     <el-alert
@@ -178,14 +178,14 @@
                         </el-form>
                         <div class="u-submit">
                             <el-button type="primary" icon="el-icon-right" class="u-btn" @click="insertLine"
-                                >插入</el-button
+                                >{{ $t('插入') }}</el-button
                             >
                         </div>
                     </div>
                 </el-col>
                 <el-col :span="12">
                     <div class="m-col m-col-right">
-                        <h2 class="u-subtitle"><img class svg-inline src="@/assets/img/macro/cube2.svg" />宏编辑区</h2>
+                        <h2 class="u-subtitle"><img class svg-inline src="@/assets/img/macro/cube2.svg" />{{ $t('宏编辑区') }}</h2>
                         <p class="u-tips">按下Tab键即可自动联想补全</p>
                         <codemirror v-model="code" :options="cmOptions" @input="onCmCodeChange" ref="cmEditor" />
                         <div class="u-count">

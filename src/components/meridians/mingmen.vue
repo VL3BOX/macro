@@ -1,6 +1,6 @@
 <template>
     <div class="jinmai mingmen" style>
-        <h3>督脉</h3>
+        <h3>{{ $t('督脉') }}</h3>
         <div v-for="(item, index) in jingmai" :key="index" :class="'ap ap' + item.id">
             <em :class="'level' + item.nowLevel"></em>
             <a

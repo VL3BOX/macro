@@ -1,8 +1,8 @@
 <template>
     <div class="m-macro-rank-mini m-macro-rank" v-loading="loading">
         <h3 class="m-side-title">
-            <div class="u-title"><img class="u-icon" svg-inline src="@/assets/img/side/rank.svg" />排行榜</div>
-            <span class="u-more" @click="viewRank">查看更多<i class="el-icon-d-arrow-right"></i></span>
+            <div class="u-title"><img class="u-icon" svg-inline src="@/assets/img/side/rank.svg" />{{ $t('排行榜') }}</div>
+            <span class="u-more" @click="viewRank">{{ $t('查看更多') }}<i class="el-icon-d-arrow-right"></i></span>
         </h3>
         <ul class="u-list" v-if="subtype">
             <li v-for="(item, j) in mount_data" :key="j">

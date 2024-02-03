@@ -2,7 +2,7 @@
     <div class="m-list-side">
         <!-- 群号 -->
         <RightSideMsg>
-            <em>宏作者交流群</em> :
+            <em>{{ $t('宏作者交流群') }}</em> :
             <strong @click="onQQClick" class="u-link" :title="$t('点击复制')">
                 <a>{{ qq }}</a>
             </strong>
