@@ -279,6 +279,7 @@ export default {
                 this.driver = new JX3_QIXUE({
                     version: this.version,
                     editable: true,
+                    $i18n: this.$i18n,
                 });
                 const vm = this;
                 $(document).on("JX3_QIXUE_Change", function (e, ins) {
