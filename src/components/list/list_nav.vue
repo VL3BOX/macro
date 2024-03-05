@@ -12,7 +12,7 @@
                     <i class="u-pic">
                         <img :src="showMountIcon(item.id)" :alt="item.name" />
                     </i>
-                    <span class="u-txt">{{ item.name }}</span>
+                    <span class="u-txt">{{ $t(item.name) }}</span> <!-- i18n: school name -->
                 </router-link>
             </li>
         </ul>
