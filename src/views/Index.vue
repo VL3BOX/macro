@@ -61,7 +61,7 @@
     </div>
 </template>
 <script>
-import { getPosts } from "@/service/post";
+import { getPosts, globalSearch } from "@/service/post";
 import { appKey } from "@/../setting.json";
 
 import listItem from "@/components/list/list_item.vue";
@@ -222,7 +222,7 @@ export default {
             this.drawer = true;
             this.drawer_title = author + "#" + m.name;
             this.drawer_content = m.macro;
-            this.drawer_link = "./" + id + "?tab=" + m.name;
+            this.drawer_link = "/macro/" + id + "?tab=" + m.name;
             this.drawer_id = id;
         },
         postLink: function (val) {
